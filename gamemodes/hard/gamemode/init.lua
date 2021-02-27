@@ -3,3 +3,6 @@ AddCSLuaFile( "shared.lua" )
 
 include( "shared.lua" )
 
+function GM:PlayerAuthed()
+
+end
