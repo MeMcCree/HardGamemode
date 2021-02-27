@@ -6,18 +6,17 @@ function scoreboard:show()
 	local HeaderHeight = 60
 
 	local Scoreboard = vgui.Create("DFrame")
-	Scoreboard:SetPos(ScrW() / 2 - W * 0.75, 0)
+	Scoreboard:SetPos(ScrW() / 2 - W * 0.75, -H)
 	Scoreboard:SetSize( W, H ) 
 	Scoreboard:SetTitle( "" ) 
 	Scoreboard:SetVisible( true ) 
 	Scoreboard:SetDraggable( false ) 
 	Scoreboard:ShowCloseButton( false ) 
 	Scoreboard:MakePopup()
+	local isAnimating = false
 
-	local sizeW , sizeH, time, delay, ease = ScrW()/2 , ScrH()/1.5, 1, 0, .15
-	local isAnimating = true
-	Scoreboard:SizeTo( sizeW, sizeH, time, delay, ease ,function()
-		local isAnimating = false
+	Scoreboard:MoveTo(ScrW() / 2 - W * 0.75, 0, 1, 0, 0.01, function()
+		isAnimating = true
 	end)
 
 	function Scoreboard:Paint( w, h )
@@ -40,7 +39,7 @@ function scoreboard:show()
 	for _, v in ipairs(player.GetAll()) do
 		local PlayerPanel = scroll:Add( "DPanel" )
 		PlayerPanel:Dock(TOP)
-		PlayerPanel:DockMargin(15, HeaderHeight,0,0)
+		PlayerPanel:DockMargin(15, HeaderHeight, 0, 0)
 		PlayerPanel:SetTall(60)
 		PlayerPanel:SetText("")
 		PlayerPanel.Paint = function(me,w,h)
