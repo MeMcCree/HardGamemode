@@ -44,7 +44,7 @@ function scoreboard:show()
 		surface.DrawRect(0, 0, w, h)
 
 		surface.SetDrawColor(hg.uicolors.outline.r, hg.uicolors.outline.g, hg.uicolors.outline.b, 235)
-		hg.uidrawoutline(0, 0, w, h, 1)
+		surface.DrawRect(0, h-3, w, 3)
 	end
 
 	Scoreboard.infotab.name = Scoreboard.infotab:Add("DLabel")
@@ -54,7 +54,7 @@ function scoreboard:show()
 									   0,
 									   0
 									   )
-	Scoreboard.infotab.name:SetFont("hginfo")
+	Scoreboard.infotab.name:SetFont("hginfoname")
 	Scoreboard.infotab.name:SetTextColor(hg.uicolors.txt.hr)
 	Scoreboard.infotab.name:SetText("Name:")
 	Scoreboard.infotab.name:SetWide(hg.uisizes.info.txtwide)
@@ -130,7 +130,7 @@ function scoreboard:show()
 			surface.DrawRect(0, 0, w, h)
 
 			surface.SetDrawColor(hg.uicolors.outline.r, hg.uicolors.outline.g, hg.uicolors.outline.b, 235)
-			hg.uidrawoutline(0, 0, w, h, 1)
+			surface.DrawRect(0, h-2, w, 2)
 		end
 		hg.createinfo(plpanel, ply)
 	end

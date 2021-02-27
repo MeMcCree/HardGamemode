@@ -12,8 +12,8 @@ hg.uicolors = {
 
 hg.uisizes = {
 	hr = {tall = 64},
-	info = {tall = 64, margin = {0, 0, 0, 0}, txtoffset = ScrW() / 19.8, txtwide = ScrW() / 19.8},
-	infopl = {tall = 64, margin = {0, 2, 0, 0}, txtoffset = ScrW() / 19.8, txtwide = ScrW() / 19.8},
+	info = {tall = 64, margin = {0, 0, 0, 0}, txtoffset = ScrW() / 22, txtwide = ScrW() / 22},
+	infopl = {tall = 64, margin = {0, 0, 0, 0}, txtoffset = ScrW() / 22, txtwide = ScrW() / 22},
 	spacer = {tall = 8},
 }
 
@@ -36,6 +36,7 @@ end
 
 hg.createinfo = function(pnl, ply)
 	if ply == nil or pnl == nil then return false end
+
 	pnl.name = pnl:Add("DLabel")
 	pnl.name:Dock(LEFT)
 	pnl.name:DockMargin(hg.uisizes.info.txtoffset,
@@ -43,7 +44,7 @@ hg.createinfo = function(pnl, ply)
 									   0,
 									   0
 									   )
-	pnl.name:SetFont("hginfoplayer")
+	pnl.name:SetFont("hginfoname")
 	pnl.name:SetTextColor(hg.uicolors.txt.hr)
 	pnl.name:SetText(ply:Nick())
 	pnl.name:SetWide(hg.uisizes.info.txtwide)
@@ -55,7 +56,7 @@ hg.createinfo = function(pnl, ply)
 									   0,
 									   0
 									   )
-	pnl.class:SetFont("hginfoplayer")
+	pnl.class:SetFont("hginfo")
 	pnl.class:SetTextColor(hg.uicolors.txt.hr)
 	pnl.class:SetText("placeholder")
 	pnl.class:SetWide(hg.uisizes.info.txtwide)
@@ -67,7 +68,7 @@ hg.createinfo = function(pnl, ply)
 									   0,
 									   0
 									   )
-	pnl.score:SetFont("hginfoplayer")
+	pnl.score:SetFont("hginfo")
 	pnl.score:SetTextColor(hg.uicolors.txt.hr)
 	pnl.score:SetText("Placeholder")
 	pnl.score:SetWide(hg.uisizes.info.txtwide)
@@ -79,7 +80,7 @@ hg.createinfo = function(pnl, ply)
 									   0,
 									   0
 									   )
-	pnl.rank:SetFont("hginfoplayer")
+	pnl.rank:SetFont("hginfo")
 	pnl.rank:SetTextColor(hg.uicolors.txt.hr)
 	pnl.rank:SetText("Placeholder")
 	pnl.rank:SetWide(hg.uisizes.info.txtwide)
@@ -91,7 +92,7 @@ hg.createinfo = function(pnl, ply)
 									   0,
 									   0
 									   )
-	pnl.ping:SetFont("hginfoplayer")
+	pnl.ping:SetFont("hginfo")
 	pnl.ping:SetTextColor(hg.uicolors.txt.hr)
 	pnl.ping:SetText(ply:Ping())
 	pnl.ping:SetWide(hg.uisizes.info.txtwide)
@@ -99,5 +100,5 @@ end
 
 hg.uifont("closebtn", 32, "Roboto", 500)
 hg.uifont("title", 32, "Roboto", 400)
-hg.uifont("info", 20, "Roboto", 400)
-hg.uifont("infoplayer", 20, "Roboto", 400)
+hg.uifont("info", 18, "Roboto", 400)
+hg.uifont("infoname", 20, "Roboto", 550)
