@@ -44,7 +44,7 @@ function scoreboard:show()
 	Scoreboard.PlayerList.Paint = nil
 
 	for _, v in ipairs( player.GetAll() ) do
-		local line = Scoreboard.PlayerList:AddLine( v:Name(), "10", "10", "10", v:Ping() )
+		local line = Scoreboard.PlayerList:AddLine( hg.uirolechar(v) .. v:Name(), "10", "10", "10", v:Ping() )
 		function line:Paint( w, h )
 			surface.SetDrawColor(hg.uicolors.hr.r, hg.uicolors.hr.g, hg.uicolors.hr.b, 205)
 			surface.DrawRect(0, 0, w, h)

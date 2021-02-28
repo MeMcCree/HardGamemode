@@ -5,6 +5,8 @@ function CalcMovement(cmd)
 	local MaxStamina = player_manager.RunClass( ply, "GetMaxStamina" )
 	local RegenMul = player_manager.RunClass( ply, "GetStaminaRegen" )
 	local DecayMul = player_manager.RunClass( ply, "GetStaminaDecayMul" )
+
+	if(MaxStamina == nil or RegenMul == nil or DecayMul == nil) then return end
 	
 	local NewButtons = cmd:GetButtons()
 
@@ -85,3 +87,34 @@ end
 
 
 hook.Add("CreateMove", "Stamina", CalcMovement)
+
+local staminafade = 0
+
+function DrawStaminaBar()
+	local ply = LocalPlayer()
+	local MaxStamina = player_manager.RunClass( ply, "GetMaxStamina" )
+	if ply.Stamina == MaxStamina then
+		staminafade = math.Clamp(staminafade - 0.005, 0, 1)
+	else
+		staminafade = math.Clamp(staminafade + 0.005, 0, 1)
+	end
+
+	local SW, SH = ScrW(), ScrH()
+	local BW, BH = SW / 6, hg.uisizes.staminabar.tall
+
+	local emptycolor = hg.uicolors.staminabarempty
+
+	local fillcolor = hg.uicolors.staminabarfill
+
+	surface.SetDrawColor(emptycolor.r, emptycolor.g, emptycolor.b, emptycolor.a * staminafade)
+	surface.DrawRect(SW / 2 - BW / 2, SH - BH - 24, BW, BH)
+
+	surface.SetDrawColor(fillcolor.r, fillcolor.g, fillcolor.b, fillcolor.a * staminafade)
+	surface.DrawRect(SW / 2 - BW / 2 + hg.uisizes.staminabar.xinset,
+					 SH - BH - 24 + hg.uisizes.staminabar.yinset,
+					 BW * (ply.Stamina / 100) - hg.uisizes.staminabar.xinset * 2,
+					 BH - hg.uisizes.staminabar.yinset * 2
+					)
+end
+
+hook.Add("HUDPaint", "StaminaBar", DrawStaminaBar)

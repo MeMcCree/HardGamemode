@@ -1,5 +1,5 @@
 local NetList = {
-	"StaminaInit"
+	"showlobby"
 }
 
 for _, v in ipairs(NetList) do
