@@ -1,3 +1,2 @@
-# HardGamemode
-Hard Gamemode
-Gamemode for Garry's mode
+# Gamemode for Garry's mod
+Hard gamemode
