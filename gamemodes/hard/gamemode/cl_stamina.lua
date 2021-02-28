@@ -19,8 +19,6 @@ function CalcMovement(cmd)
 		
 	end
 
-	print(ply.Stamina)
-
 	if cmd:KeyDown(IN_SPEED) and ( cmd:KeyDown(IN_FORWARD) or cmd:KeyDown(IN_BACK) or cmd:KeyDown(IN_MOVELEFT) or cmd:KeyDown(IN_MOVERIGHT) ) and (ply:GetVelocity():Length() > 100) and ( ply:OnGround() or ply:WaterLevel() ~= 0 ) and !ply:InVehicle() then
 	
 		if ply.Stamina <= 0 then
