@@ -113,6 +113,7 @@ function LobbyTick()
     if(ReadyPercentage() > 0.5) then
         HG_LOBBY_TIMER = HG_LOBBY_TIMER - 1
         CheckRoundStart()
+        UpdateLobbyTimer()
         return true
     end
 end

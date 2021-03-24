@@ -22,6 +22,7 @@ end)
 
 net.Receive("UpdateLobbyTimer", function()
     HG_LOBBY_TIMER = net.ReadInt(16)
+    UpdateLobbyTimer()
 end)
 
 function OpenLobby()
@@ -70,6 +71,13 @@ function OpenLobby()
     Lobby.BtnPanel.ReadyBtn = Lobby.BtnPanel:Add('DButton')
     Lobby.BtnPanel.ReadyBtn:Dock(RIGHT)
     Lobby.BtnPanel.ReadyBtn:SetWide(160)
+
+    Lobby.BtnPanel.Timer = Lobby.BtnPanel:Add('DLabel')
+    Lobby.BtnPanel.Timer:Dock(LEFT)
+    Lobby.BtnPanel.Timer:SetWide(160)
+    Lobby.BtnPanel.Timer:SetText(HG_LOBBY_TIMER)
+    Lobby.BtnPanel.Timer:SetTextColor( hg.uicolors.txt.h1 )
+    Lobby.BtnPanel.Timer:SetFont("hgtitle")
 
     function Lobby.UpdateContents()
         Lobby.PlayerList:Clear()
@@ -123,6 +131,12 @@ end
 function UpdateLobby()
     if(IsValid(Lobby)) then
         Lobby.UpdateContents()
+    end
+end
+
+function UpdateLobbyTimer()
+    if(IsValid(Lobby)) then
+        Lobby.BtnPanel.Timer:SetText(HG_LOBBY_TIMER)
     end
 end
 
