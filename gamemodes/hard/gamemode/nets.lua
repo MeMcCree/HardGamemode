@@ -1,5 +1,13 @@
 local NetList = {
-	"showlobby"
+	"UpdateRoundStatus",
+	"openlobby",
+	"closelobby",
+	"UpdateLobbyTimer",
+	"SendPlayersInLobby",
+	"SendLobbyTimer",
+	"UpdateReadyState",
+	"UpdateLobbyState",
+	"SendLobby"
 }
 
 for _, v in ipairs(NetList) do

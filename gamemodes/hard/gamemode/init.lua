@@ -1,16 +1,18 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
+include( "shared.lua" )
+
+-- Include Other Scripts
+
 AddCSLuaFile( "cl_scoreboard.lua" )
 AddCSLuaFile( "uiconfig.lua" )
 AddCSLuaFile( "cl_stamina.lua" )
-AddCSLuaFile( "cl_lobby.lua" )
-AddCSLuaFile( "cl_round.lua" )
+AddCSLuaFile( "roundsystem/cl_roundsystem.lua")
+AddCSLuaFile( "lobby/cl_lobby.lua")
 
-include( "shared.lua" )
+include( "roundsystem/sv_roundsystem.lua")
+include( "lobby/sv_lobby.lua")
 include( "nets.lua" )
-include( "sv_lobby.lua" )
-include( "util.lua" )
-include( "sv_round.lua" )
 
 function GM:PlayerInitialSpawn( ply )
 	player_manager.SetPlayerClass( ply, "class_satellite" )

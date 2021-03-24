@@ -1,5 +1,5 @@
 include( "shared.lua" )
 include( "cl_scoreboard.lua" )
 include( "cl_stamina.lua" )
-include( "cl_round.lua" )
-include( "cl_lobby.lua" )
+include( "roundsystem/cl_roundsystem.lua")
+include( "lobby/cl_lobby.lua")

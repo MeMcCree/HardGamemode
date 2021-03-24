@@ -4,6 +4,8 @@ scoreboard = scoreboard or {}
 
 function scoreboard:show()
 
+	if(not LocalPlayer():Alive()) then return end
+
 	local SW, SH = ScrW(), ScrH()
 	local FW, FH = SW / 1.9, SH / 1.35
 
@@ -81,5 +83,6 @@ function GM:ScoreboardShow()
 end
 
 function GM:ScoreboardHide()
+	if(not IsValid(Scoreboard)) then return end
 	scoreboard:hide()
 end

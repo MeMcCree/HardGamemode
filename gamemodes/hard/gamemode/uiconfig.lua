@@ -7,17 +7,21 @@ hg.uicolors = {
 	staminabarfill = Color(255, 255, 117, 255),
 	staminabarempty = Color(0, 0, 0, 100),
 	roundbar = Color(0, 0, 0, 100),
+	secondary = Color(30, 39, 46),
+	bg = Color(21, 25, 33),
 
 	txt = {
 		hr = Color(230, 230, 240),
 		roundtimer = Color(255, 255, 117, 255),
+		readyon = Color(100, 255, 100),
+		readyoff = Color(255, 100, 100),
 	},
 }
 
 hg.uisizes = {
 	hr = {tall = 64},
-	info = {tall = 48, margin = {0, 0, 0, 0}},
-	infopl = {tall = 24, margin = {0, 0, 0, 0}},
+	info = {tall = 64, margin = {0, 0, 0, 0}},
+	infopl = {tall = 48, margin = {0, 0, 0, 0}},
 	staminabar = {tall = 24, yinset = 8, xinset = 8},
 	roundbar = {tall = 64},
 }
@@ -47,4 +51,4 @@ hg.uifont("closebtn", 32, "Roboto", 500)
 hg.uifont("title", 32, "Roboto", 400)
 hg.uifont("info", 18, "Roboto", 400)
 hg.uifont("infoname", 20, "Roboto", 550)
-hg.uifont("roundtimer", 32, "Roboto", 400)
+hg.uifont("roundtimer", 32, "Roboto", 500)
