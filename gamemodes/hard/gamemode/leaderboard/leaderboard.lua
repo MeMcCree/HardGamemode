@@ -19,3 +19,17 @@ function leaderscore()
 end
 
 print("ugly2")
+
+---text---
+
+net.Start("urugly")
+  net.WriteString("Ugly Man")
+  net.WriteBool(false)
+net.Broadcast()
+
+timer.Simple(3, function()
+  net.Start("urugly")
+    net.WriteString("")
+    net.WriteBool(true)
+  net.Broadcast()
+end)
