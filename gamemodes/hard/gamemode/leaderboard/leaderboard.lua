@@ -1,4 +1,4 @@
-print("ugly3")
+print("ugly3") 
 
 hook.Add("PlayerDeath", "checkuglys", leaderscore)
 
@@ -17,19 +17,21 @@ function leaderscore()
     print("last stand")  
     end
 end
-
+ 
 print("ugly2")
 
----text---
+---text--- 
 
-net.Start("urugly")
+function DisplayMsg(msg, time)
+  net.Start("message")  
   net.WriteString("Ugly Man")
   net.WriteBool(false)
 net.Broadcast()
 
 timer.Simple(3, function()
-  net.Start("urugly")
+  net.Start("message") 
     net.WriteString("")
     net.WriteBool(true)
   net.Broadcast()
 end)
+end

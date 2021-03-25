@@ -1,10 +1,9 @@
-include( "cl_leaderboard.lua" )
 
 local HUD_MSGTOSCREEN = ""
 local HUD_MSGTOSCREENFADE = 0
 local HUD_MSGINPROGRESS = false
 
-net.Receive("urugly", function()
+net.Receive("textleaderboard", function()
   local msg = net.ReadSting()
   local isend = net.ReadBool()
 

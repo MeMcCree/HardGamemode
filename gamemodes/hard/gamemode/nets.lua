@@ -7,7 +7,8 @@ local NetList = {
 	"SendLobbyTimer",
 	"UpdateReadyState",
 	"UpdateLobbyState",
-	"SendLobby"
+	"SendLobby",
+	"textleaderboard"
 }
 
 for _, v in ipairs(NetList) do
