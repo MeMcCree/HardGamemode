@@ -10,6 +10,7 @@ AddCSLuaFile( "cl_stamina.lua" )
 AddCSLuaFile( "roundsystem/cl_roundsystem.lua")
 AddCSLuaFile( "lobby/cl_lobby.lua")
 AddCSLuaFile( "musicsystem/cl_musicsystem.lua")
+AddCSLuaFile( "leaderboard/cl_leaderboard.lua")
 
 include( "roundsystem/sv_roundsystem.lua")
 include( "lobby/sv_lobby.lua")
