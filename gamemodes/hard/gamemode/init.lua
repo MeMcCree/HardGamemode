@@ -15,6 +15,7 @@ include( "roundsystem/sv_roundsystem.lua")
 include( "lobby/sv_lobby.lua")
 include( "musicsystem/sv_musicsystem.lua")
 include( "nets.lua" )
+include( "leaderboard/leaderboard.lua" )
 
 function GM:PlayerInitialSpawn( ply )
 	player_manager.SetPlayerClass( ply, "class_satellite" )
