@@ -9,9 +9,11 @@ AddCSLuaFile( "uiconfig.lua" )
 AddCSLuaFile( "cl_stamina.lua" )
 AddCSLuaFile( "roundsystem/cl_roundsystem.lua")
 AddCSLuaFile( "lobby/cl_lobby.lua")
+AddCSLuaFile( "musicsystem/cl_musicsystem.lua")
 
 include( "roundsystem/sv_roundsystem.lua")
 include( "lobby/sv_lobby.lua")
+include( "musicsystem/sv_musicsystem.lua")
 include( "nets.lua" )
 
 function GM:PlayerInitialSpawn( ply )
